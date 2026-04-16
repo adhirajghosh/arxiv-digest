@@ -6,11 +6,17 @@ import os
 import re
 import shutil
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup
 
 from build.parser import parse_digest
 from build.clusterer import assign_topics, load_topics
-from build.icons import svg_icon
+from build.icons import svg_icon as _svg_icon_raw
+
+
+def svg_icon(name: str, size: int = 20, extra_class: str = "") -> Markup:
+    """Render an SVG icon as a Jinja2-safe Markup object."""
+    return Markup(_svg_icon_raw(name, size, extra_class))
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIGEST_DIR = os.path.join(ROOT, "arxiv_digest")
@@ -145,7 +151,10 @@ def build():
     all_dates = [{"date": d["date"], "date_display": d["date_display"]} for d in digests]
 
     # Setup Jinja2
-    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR), autoescape=False)
+    env = Environment(
+        loader=FileSystemLoader(TEMPLATE_DIR),
+        autoescape=select_autoescape(["html"]),
+    )
 
     # Common template variables
     common_icons = {

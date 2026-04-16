@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arXiv Digest — April 9, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> <span>arXiv Digest</span>
+            </a>
+            <nav class="date-nav" aria-label="Date navigation">
+                
+                <span class="nav-btn disabled"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></span>
+                
+                <div class="date-selector">
+                    <button class="date-btn" id="date-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <span>April 9, 2026</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="date-dropdown" id="date-dropdown">
+                        
+                        <a href="2026-04-09.html" class="date-option active">April 9, 2026</a>
+                        
+                    </div>
+                </div>
+                
+                <span class="nav-btn disabled"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+                
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="search-toggle" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon-sun"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+                    <span class="theme-icon-moon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+                </button>
+            </div>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" id="search-input" placeholder="Search papers..." autocomplete="off">
+            <button class="icon-btn" id="search-close" aria-label="Close search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        </div>
+    </header>
+
+    <main class="main">
+        
+
+<section class="highlights-section">
+    <h2 class="section-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> Top Highlights</h2>
+    <div class="highlights-row">
+        
+        <div class="highlight-card" style="--topic-color: #8b5cf6">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> <span>VLM Architecture</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.02486" target="_blank" rel="noopener">VLMs Need Words</a>
+            </h3>
+            <p class="highlight-summary">reveals that VLMs systematically fail on visual tasks when entities can&#39;t be named in language — a training shortcut, not an architectural limitation. Fundamental finding for the field.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #8b5cf6">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> <span>VLM Architecture</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.02097" target="_blank" rel="noopener">LatentUM</a>
+            </h3>
+            <p class="highlight-summary">introduces a unified model that places understanding and generation in a shared latent space, eliminating pixel-space mediation and enabling true interleaved cross-modal reasoning with SOTA results.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #06b6d4">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> <span>Benchmarks &amp; Evaluation</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.05015" target="_blank" rel="noopener">Video-MME-v2</a>
+            </h3>
+            <p class="highlight-summary">addresses benchmark saturation in video understanding with a tri-level hierarchy and group-based non-linear scoring backed by 3,300 human annotation hours.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #10b981">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> <span>Video Understanding</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.01569" target="_blank" rel="noopener">VideoZeroBench</a>
+            </h3>
+            <p class="highlight-summary">shows frontier video MLLMs achieve &lt;17% accuracy on long-video QA and drop to &lt;1% when required to provide correct spatio-temporal grounding evidence.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #06b6d4">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> <span>Benchmarks &amp; Evaluation</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.04780" target="_blank" rel="noopener">CLEAR</a>
+            </h3>
+            <p class="highlight-summary">demonstrates a creative framework that unlocks unified multimodal models&#39; own generative capacity to improve understanding of degraded images, using a latent representation bridge and interleaved RL.</p>
+        </div>
+        
+    </div>
+</section>
+
+
+
+<section class="trend-section">
+    <div class="trend-card">
+        <h2 class="trend-label"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Today's Trend</h2>
+        <p class="trend-text">Today&#39;s submissions reveal a maturing field that is turning inward to diagnose and fix systematic failures in multimodal models. Multiple papers (VLMs Need Words, VideoZeroBench, Multimodal Models Cannot Spot Spatial Inconsistencies) converge on the same uncomfortable truth: current VLMs and video MLLMs achieve inflated benchmark scores while lacking genuine fine-grained visual understanding, 3D spatial reasoning, and spatio-temporal grounding. The response to this diagnosis splits into two camps — better benchmarks (Video-MME-v2, VideoZeroBench, JAMMEval) with more rigorous evaluation protocols that penalize surface-level &#34;correct&#34; answers, and training/inference interventions that address root causes (LinguDistill for linguistic degradation, Focus Matters and Look Twice for hallucination, CLEAR for degraded inputs). Architecturally, LatentUM represents the push toward truly unified understanding+generation models with shared latent spaces, while AURA extends video understanding to the streaming setting — both pointing toward more practically deployable multimodal systems. The diffusion LLM space continues to mature with infrastructure contributions like DARE, and video generation takes a step toward real-time deployment with Salt&#39;s 2-4 step distillation. Non-English evaluation (JAMMEval) remains underserved but is getting deserved attention.</p>
+    </div>
+</section>
+
+
+
+<section class="filter-section" id="filter-bar">
+    <div class="filter-row">
+        <button class="topic-pill active" data-topic="all">
+            All <span class="pill-count">13</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Benchmarks &amp; Evaluation" style="--pill-color: #06b6d4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation <span class="pill-count">6</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="VLM Architecture" style="--pill-color: #8b5cf6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture <span class="pill-count">5</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Training &amp; Distillation" style="--pill-color: #f97316">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Training &amp; Distillation <span class="pill-count">3</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Video Understanding" style="--pill-color: #10b981">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding <span class="pill-count">3</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Reasoning" style="--pill-color: #eab308">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Streaming &amp; Real-time" style="--pill-color: #14b8a6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg> Streaming &amp; Real-time <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Hallucination" style="--pill-color: #f59e0b">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg> Hallucination <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Generation" style="--pill-color: #a855f7">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> Generation <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Diffusion Models" style="--pill-color: #d946ef">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> Diffusion Models <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="3D &amp; Spatial" style="--pill-color: #ec4899">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> 3D &amp; Spatial <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Multilingual" style="--pill-color: #6366f1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Multilingual <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Infrastructure &amp; Tooling" style="--pill-color: #78716c">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Infrastructure &amp; Tooling <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Attention &amp; Interpretability" style="--pill-color: #84cc16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="1"/><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"/></svg> Attention &amp; Interpretability <span class="pill-count">1</span>
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="papers-section">
+    <div class="papers-grid">
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Training &amp; Distillation&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #f97316"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Training &amp; Distillation</span>
+                    
+                </div>
+                <span class="paper-number">#1</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.02486" target="_blank" rel="noopener">VLMs Need Words: Vision Language Models Ignore Visual Detail In Favor of Semantic Anchors <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Haz Sameen Shahgir, Xiaofu Chen, Yu Fu et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Haz Sameen Shahgir, Xiaofu Chen, Yu Fu, Erfan Shayegani, Nael Abu-Ghazaleh, Yova Kementchedjhieva, Yue Dong</p>
+            <p class="paper-affiliations">University of California, Riverside; Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Demonstrates through controlled visual correspondence experiments that VLMs systematically fail on fine-grained visual perception not because they lack the internal representations, but because their text-centric training creates a shortcut where they can only reason about visual entities that have mappable language labels. Teaching arbitrary names for unknown entities recovers performance, proving this is a training artifact, not an architectural ceiling — a critical insight for VLM pretraining methodology.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-1">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-1">
+                    <p>This is a genuinely important finding that cleanly isolates a core failure mode of current VLMs. The experimental design — comparing &#34;nameable&#34; vs &#34;unnameable&#34; entities and showing that arbitrary naming fixes the gap — is elegant and convincing. This should influence how the community thinks about VLM training pipelines and data design.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-1">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-1">
+                    <p>Vision Language Models (VLMs) achieve impressive performance across a wide range of multimodal tasks. However, on some tasks that demand fine-grained visual perception, they often fail even when the required information is present in their internal representations. In this work, we demonstrate that this gap arises from their narrow training pipeline which focuses on moving visual information to the textual space. Consequently, VLMs can only reason about visual entities that can be mapped to known concepts in the language space, leaving vision-focused tasks such as visual correspondence and reasoning about novel visual entities poorly supported. We verify this behavior through visual correspondence tasks, in which VLMs must detect matching entities between two images. Testing across semantic, shape, and face correspondence tasks, we find that VLMs perform much better when the relevant entities are nameable in language than when they are unnameable. We further show that teaching completely arbitrary names for unknown entities improves performance, confirming that current VLM failures on visual tasks reflect learned shortcuts from their training, rather than a fundamental limitation of multimodal architectures.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.02486" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.02486</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Reasoning&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #eab308"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning</span>
+                    
+                </div>
+                <span class="paper-number">#2</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.02097" target="_blank" rel="noopener">LatentUM: Unleashing the Potential of Interleaved Cross-Modal Reasoning via a Latent-Space Unified Model <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Jiachun Jin, Zetong Zhou, Xiao Yang et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Jiachun Jin, Zetong Zhou, Xiao Yang, Hao Zhang, Pengfei Liu, Jun Zhu, Zhijie Deng</p>
+            <p class="paper-affiliations">Shanghai Jiao Tong University; Tsinghua University; UC San Diego</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Proposes a unified multimodal model where understanding and generation share a single semantic latent space rather than requiring pixel-level decoding as a bridge between disjoint representations. This eliminates the inefficiency of existing unified models&#39; decode-reencode pathways, enables interleaved cross-modal reasoning (think visually, then generate, then reason again), and achieves SOTA on Visual Spatial Planning while supporting world modeling through future visual state prediction.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-2">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-2">
+                    <p>Strong architectural contribution that addresses a real bottleneck in unified multimodal models. The shared latent space approach is well-motivated and the demonstration across planning, self-reflective generation, and world modeling is compelling. This could become an influential design pattern if the approach scales.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-2">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-2">
+                    <p>Unified models (UMs) hold promise for their ability to understand and generate content across heterogeneous modalities. Compared to merely generating visual content, the use of UMs for interleaved cross-modal reasoning is more promising and valuable, e.g., for solving understanding problems that require dense visual thinking, improving visual generation through self-reflection, or modeling visual dynamics of the physical world guided by stepwise action interventions. However, existing UMs necessitate pixel decoding as a bridge due to their disjoint visual representations for understanding and generation, which is both ineffective and inefficient. In this paper, we introduce LatentUM, a novel unified model that represents all modalities within a shared semantic latent space, eliminating the need for pixel-space mediation between visual understanding and generation. This design naturally enables flexible interleaved cross-modal reasoning and generation. Beyond improved computation, the shared representation alleviates codec bias and strengthens cross-modal alignment, allowing LatentUM to achieve state-of-the-art performance on the Visual Spatial Planning benchmark, push the limits of visual generation through self-reflection, and support world modeling by predicting future visual states within the shared semantic latent space.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.02097" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.02097</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Benchmarks &amp; Evaluation&#34;, &#34;Video Understanding&#34;]" style="--card-accent: #06b6d4">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #10b981"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding</span>
+                    
+                </div>
+                <span class="paper-number">#3</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.05015" target="_blank" rel="noopener">Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Chaoyou Fu, Haozhi Yuan, Yuhao Dong et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Chaoyou Fu, Haozhi Yuan, Yuhao Dong, Yi-Fan Zhang, Yunhang Shen, Xiaoxing Hu, Xueying Li, Jinsen Su, Chengwu Long, Xiaoyao Xie, Yongkang Xie, Xiawu Zheng, Xue Yang, Haoyu Cao, Yunsheng Wu, Ziwei Liu, Xing Sun, Caifeng Shan, Ran He, et al.</p>
+            <p class="paper-affiliations">Nanjing University; Institute of Automation, Chinese Academy of Sciences; Nanyang Technological University; others</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Addresses the saturation problem of current video understanding benchmarks by introducing a tri-level complexity hierarchy (information aggregation → temporal dynamics → multimodal reasoning) paired with a group-based non-linear evaluation that requires consistency across related questions rather than treating each question independently. Construction involved 3,300 human-hours with 5 rounds of QA, aiming to close the gap between leaderboard performance and actual model capability.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-3">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-3">
+                    <p>Exactly the kind of benchmark work the field needs right now. The group-based non-linear scoring is a genuinely better evaluation paradigm than per-question accuracy — it penalizes models that get lucky on individual questions without coherent understanding. The investment in annotation quality (50 reviewers, 5 QA rounds) is substantial. This will likely become the standard successor to Video-MME.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-3">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-3">
+                    <p>With the rapid advancement of video understanding, existing benchmarks are becoming increasingly saturated, exposing a critical discrepancy between inflated leaderboard scores and real-world model capabilities. To address this widening gap, we introduce Video-MME-v2, a comprehensive benchmark designed to rigorously evaluate the robustness and faithfulness of video understanding. To systematically evaluate model capabilities, we design a progressive tri-level hierarchy that incrementally increases the complexity of video comprehension, ranging from multi-point visual information aggregation, to temporal dynamics modeling, and ultimately to complex multimodal reasoning. Besides, in contrast to conventional per-question accuracy, we propose a group-based non-linear evaluation strategy that enforces both consistency across related queries and coherence in multi-step reasoning. To guarantee data quality, Video-MME-v2 is constructed through a rigorously controlled human annotation pipeline, involving 12 annotators and 50 independent reviewers, backed by 3,300 human-hours and up to 5 rounds of quality assurance.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.05015" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.05015</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Video Understanding&#34;, &#34;Benchmarks &amp; Evaluation&#34;]" style="--card-accent: #10b981">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #10b981"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                </div>
+                <span class="paper-number">#4</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.01569" target="_blank" rel="noopener">VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Jiahao Meng, Yue Tan, Qi Xu et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Jiahao Meng, Yue Tan, Qi Xu, Haochen Wang, Zhongwei Ren, Weisong Liu, Yuhao Wang, Renrui Zhang, Haodong Duan, Yunhai Tong</p>
+            <p class="paper-affiliations">Peking University; Wuhan University; Chinese Academy of Sciences (CASIA); Beijing Jiaotong University; Chinese University of Hong Kong</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Introduces a 500-question benchmark across 13 domains where video MLLMs must not only answer correctly but also provide the temporal intervals and spatial bounding boxes supporting their answers. The five-level evaluation protocol reveals a devastating finding: frontier models like Gemini-3-Pro achieve &lt;17% accuracy on standard QA and collapse to &lt;1% when spatial-temporal evidence grounding is required, showing that current &#34;correct&#34; answers are largely ungrounded.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-4">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-4">
+                    <p>The numbers are damning and the evaluation methodology is rigorous. Requiring spatio-temporal evidence verification is the right way to distinguish genuine understanding from surface-level pattern matching. The &lt;1% grounded accuracy result should be a wake-up call for the video MLLM community, though the benchmark size (500 questions) is modest.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-4">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-4">
+                    <p>Current video multimodal large language model evaluations suffer from two critical limitations: (1) inflated scores can mask deficiencies in fine-grained visual understanding and reasoning, and (2) answer correctness is often measured without verifying whether models identify the precise spatio-temporal evidence supporting their predictions. To address this, we introduce VideoZeroBench, a hierarchical benchmark designed for challenging long-video question answering that rigorously verifies spatio-temporal evidence. VideoZeroBench comprises 500 manually annotated questions across 13 domains, paired with temporal intervals and spatial bounding boxes as evidence, and introduces a five-level evaluation protocol that progressively tightens evidence requirements to disentangle answering generation, temporal grounding, and spatial grounding. The videos have an average duration of 667.1 seconds, introducing complex scenes and long-range temporal dependencies. The benchmark covers 11 atomic abilities, including counting, small-object perception, spatial orientation discrimination, and multi-segment causal dependency.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.01569" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.01569</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Benchmarks &amp; Evaluation&#34;, &#34;Training &amp; Distillation&#34;]" style="--card-accent: #06b6d4">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #f97316"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Training &amp; Distillation</span>
+                    
+                </div>
+                <span class="paper-number">#5</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.04780" target="_blank" rel="noopener">CLEAR: Unlocking Generative Potential for Degraded Image Understanding in Unified Multimodal Models <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Xiangzhao Hao, Zefeng Zhang, Zhenyu Zhang et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Xiangzhao Hao, Zefeng Zhang, Zhenyu Zhang, Linhao Yu, Yao Chen, Yiqian Zhang, Haiyun Guo, Shuohuan Wang, Yu Sun</p>
+            <p class="paper-affiliations">Affiliations not clearly listed (likely Baidu Research based on author profiles)</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Identifies that unified multimodal models (which can both understand and generate images) paradoxically fail to use their own generative capability to handle degraded inputs, because training never teaches this skill and the pixel decode-reencode path blocks gradient flow. CLEAR fixes this with a three-stage approach: degradation-aware SFT, a Latent Representation Bridge for direct latent-to-reasoning flow, and Interleaved GRPO that jointly optimizes text and visual generation with answer-correctness reward. Also introduces MMD-Bench for degraded multimodal evaluation.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-5">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-5">
+                    <p>Clever framing of an underexplored problem — why don&#39;t unified models help themselves with their own generation? The Latent Representation Bridge and Interleaved GRPO are technically interesting solutions. The MMD-Bench contribution adds evaluation value. Likely to inspire more work on &#34;self-healing&#34; multimodal models, though real-world degradation distributions are hard to capture in benchmarks.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-5">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-5">
+                    <p>Image degradation from blur, noise, compression, and poor illumination severely undermines multimodal understanding in real-world settings. Unified multimodal models that combine understanding and generation within a single architecture are a natural fit for this challenge, as their generative pathway can model the fine-grained visual structure that degradation destroys. Yet these models fail to leverage their own generative capacity on degraded inputs. We trace this disconnect to two compounding factors: existing training regimes never ask the model to invoke generation during reasoning, and the standard decode-reencode pathway does not support effective joint optimization. We present CLEAR, a framework that connects the two capabilities through three progressive steps: (1) supervised fine-tuning on a degradation-aware dataset to establish the generate-then-answer reasoning pattern; (2) a Latent Representation Bridge that replaces the decode-reencode detour with a direct, optimizable connection between generation and reasoning; (3) Interleaved GRPO, a reinforcement learning method that jointly optimizes text reasoning and visual generation under answer-correctness rewards. We construct MMD-Bench, covering three degradation severity levels across six standard multimodal benchmarks. Experiments show that CLEAR substantially improves robustness on degraded inputs while preserving clean-image performance.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.04780" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.04780</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Streaming &amp; Real-time&#34;, &#34;Video Understanding&#34;]" style="--card-accent: #14b8a6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #14b8a6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg> Streaming &amp; Real-time</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #10b981"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding</span>
+                    
+                </div>
+                <span class="paper-number">#6</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.04184" target="_blank" rel="noopener">AURA: Always-On Understanding and Real-Time Assistance via Video Streams <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Xudong Lu, Yang Bo, Jinpeng Chen et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Xudong Lu, Yang Bo, Jinpeng Chen, Shuhan Li, Xintong Guo, Huankang Guan, Fang Liu, Dunyuan Xu, Peiwen Sun, Heyang Sun, Rui Liu, Hongsheng Li</p>
+            <p class="paper-affiliations">Affiliations not clearly listed (likely CUHK and industry affiliates based on author profiles)</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Addresses the offline limitation of current VideoLLMs by building an end-to-end streaming framework that continuously processes live video, supports real-time QA and proactive responses, and manages unbounded context growth through Interactive Video Stream Context Management. Built on Qwen3-VL-8B with 174k streaming training samples, AURA moves beyond decoupled trigger-response pipelines toward genuine always-on video understanding.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-6">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-6">
+                    <p>Important engineering contribution that tackles a real deployment gap — most VideoLLMs can&#39;t handle streaming video. The Interactive Video Stream Context Management for unbounded contexts is the key technical challenge here. The 174k training samples seem modest, and the reliance on a single base model (Qwen3-VL-8B) limits generalizability claims, but the direction is clearly important for practical applications.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-6">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-6">
+                    <p>Video Large Language Models (VideoLLMs) have achieved strong performance on many video understanding tasks, but most existing systems remain offline and are not well-suited for live video streams that require continuous observation and timely response. Recent streaming VideoLLMs have made progress, yet current approaches often rely on decoupled trigger-response pipelines or are limited to captioning-style narration, reducing their effectiveness for open-ended question answering and long-horizon interaction. We propose AURA, an end-to-end streaming visual interaction framework that enables a unified VideoLLM to continuously process video streams and support both real-time question answering and proactive responses. AURA integrates context management, data construction, training objectives, and deployment optimization for stable long-horizon streaming interaction. The framework introduces an Interactive Video Stream Context Management mechanism to address the challenge of unbounded context growth in streaming scenarios while maintaining LLM performance. The model is initialized from Qwen3-VL-8B-Instruct and fine-tuned with approximately 174k samples corresponding to approximately 1.2B tokens.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.04184" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.04184</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Hallucination&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #f59e0b"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg> Hallucination</span>
+                    
+                </div>
+                <span class="paper-number">#7</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.03556" target="_blank" rel="noopener">Focus Matters: Phase-Aware Suppression for Hallucination in Vision-Language Models <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Sohyeon Kim, Sang Yeon Yoon, Kyeongbo Kong</p>
+            <p class="paper-authors-full hidden">Sohyeon Kim, Sang Yeon Yoon, Kyeongbo Kong</p>
+            <p class="paper-affiliations">Pusan National University; Pukyong National University</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Discovers a consistent three-phase attention pattern (diffusion → focus → rediffusion) in vision encoders of LVLMs and shows hallucinations are specifically linked to low-attention tokens during the focus phase. Proposes a training-free, single-forward-pass intervention using a Determinantal Point Process to suppress hallucination-prone tokens while preserving visual diversity, achieving hallucination reduction across multiple backbones with negligible latency overhead.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-7">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-7">
+                    <p>The three-phase attention structure finding is novel and well-supported. The DPP-based suppression during the focus phase is an elegant, principled solution compared to ad-hoc approaches. The training-free nature makes this immediately practical. However, the analysis is primarily on vision encoder attention — it doesn&#39;t address hallucinations stemming from language model priors, which limits scope.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-7">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-7">
+                    <p>Large Vision-Language Models (LVLMs) have achieved impressive progress in multimodal reasoning, yet they remain prone to object hallucinations, generating descriptions of objects that are not present in the input image. Recent approaches attempt to mitigate hallucinations by suppressing unreliable visual signals in the vision encoder, but many rely on iterative optimization for each input, resulting in substantial inference latency. In this work, we investigate the internal attention dynamics of vision encoders in LVLMs and identify a consistent three-phase structure of visual information processing: diffusion, focus, and rediffusion. Our analysis reveals that hallucination behavior is particularly sensitive to tokens receiving low attention during the focus phase. Motivated by this observation, we propose a lightweight inference-time intervention that selectively suppresses such tokens during the focus phase. The method operates in a training-free manner using statistics from a single forward pass and employs a Determinantal Point Process (DPP) to preserve diverse visual cues while filtering redundant tokens. Extensive experiments across multiple LVLM backbones and decoding strategies demonstrate that the proposed approach consistently reduces hallucination metrics while maintaining competitive caption quality, with negligible additional inference latency.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.03556" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.03556</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Generation&#34;, &#34;Diffusion Models&#34;]" style="--card-accent: #a855f7">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #a855f7"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> Generation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #d946ef"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> Diffusion Models</span>
+                    
+                </div>
+                <span class="paper-number">#8</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.03118" target="_blank" rel="noopener">Salt: Self-Consistent Distribution Matching with Cache-Aware Training for Fast Video Generation <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Xingtong Ge, Yi Zhang, Yushi Huang et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Xingtong Ge, Yi Zhang, Yushi Huang, Dailan He, Xiahong Wang, Bingqi Ma, Guanglu Song, Yu Liu, Jun Zhang</p>
+            <p class="paper-affiliations">Hong Kong University of Science and Technology; Vivix Group Limited</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Tackles the problem of distilling video diffusion models to 2-4 inference steps by combining distribution matching with explicit self-consistency regularization that prevents drift when denoising updates are composed across timesteps. Additionally introduces Cache-Distribution-Aware training that treats the KV cache quality as a condition to handle, enabling real-time autoregressive video generation without quality degradation from cache accumulation errors.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-8">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-8">
+                    <p>Technically solid work addressing a real bottleneck — 2-4 step video generation is a significant practical achievement. The SC-DMD formulation (regularizing composed rollouts) is the right insight, and the cache-aware training for autoregressive generation shows practical engineering depth. This has clear industry relevance for real-time applications.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-8">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-8">
+                    <p>Distilling video generation models to extremely low inference budgets (e.g., 2–4 NFEs) is crucial for real-time deployment, yet remains challenging. Trajectory-style consistency distillation often becomes conservative under complex video dynamics, yielding over-smoothed appearance and weak motion, while distribution matching distillation (DMD) can recover sharp, mode-seeking samples, but its local training signals do not explicitly regularize how denoising updates compose across timesteps, making composed rollouts prone to drift. We propose Self-Consistent Distribution Matching Distillation (SC-DMD), which explicitly regularizes the endpoint-consistent composition of consecutive denoising updates. For real-time autoregressive video generation, the paper further treats the KV cache as a quality parameterized condition and proposes Cache-Distribution-Aware training.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.03118" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.03118</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Benchmarks &amp; Evaluation&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                </div>
+                <span class="paper-number">#9</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.00829" target="_blank" rel="noopener">LinguDistill: Recovering Linguistic Ability in Vision-Language Models via Selective Cross-Modal Distillation <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Patrick Amadeus Irawan, Erland Hilman Fuadi, Shanu Kumar et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Patrick Amadeus Irawan, Erland Hilman Fuadi, Shanu Kumar, Alham Fikri Aji, Yova Kementchedjhieva</p>
+            <p class="paper-affiliations">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Addresses the known problem of linguistic capability degradation when adapting LMs into VLMs by using the original frozen LM as a distillation teacher with a novel KV-cache sharing mechanism that lets the teacher &#34;see&#34; the student&#39;s multimodal representations without any architectural changes. Selectively distills linguistic signals on language-heavy data, recovering ~10% of lost language benchmark performance without sacrificing vision task quality.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-9">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-9">
+                    <p>Practically relevant problem with a clean, adapter-free solution. The KV-cache sharing trick to bridge the teacher-student gap across modalities is clever. The ~10% recovery is honest but modest — this suggests the representation shift problem may need deeper architectural solutions. Good contribution but not a full resolution of the underlying issue.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-9">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-9">
+                    <p>Adapting pretrained language models (LMs) into vision-language models (VLMs) can degrade their native linguistic capability due to representation shift and cross-modal interference introduced during multimodal adaptation. Such loss is difficult to recover, even with targeted task-specific fine-tuning using standard objectives. Prior recovery approaches typically introduce additional modules that act as intermediate alignment layers to maintain or isolate modality-specific subspaces, which increases architectural complexity, adds parameters at inference time, and limits flexibility across models and settings. We propose LinguDistill, an adapter-free distillation method that restores linguistic capability by utilizing the original frozen LM as a teacher. We overcome the key challenge of enabling vision-conditioned teacher supervision by introducing layer-wise KV-cache sharing, which exposes the teacher to the student&#39;s multimodal representations without modifying the architecture of either model. We then selectively distill the teacher&#39;s strong linguistic signal on language-intensive data to recover language capability, while preserving the student&#39;s visual grounding on multimodal tasks. LinguDistill recovers approximately 10% of the performance lost on language and knowledge benchmarks, while maintaining comparable performance on vision-heavy tasks.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.00829" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.00829</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;3D &amp; Spatial&#34;, &#34;Benchmarks &amp; Evaluation&#34;]" style="--card-accent: #ec4899">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #ec4899"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> 3D &amp; Spatial</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                </div>
+                <span class="paper-number">#10</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.00799" target="_blank" rel="noopener">Multimodal Language Models Cannot Spot Spatial Inconsistencies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Om Khangaonkar, Hadi J. Rad, Hamed Pirsiavash</p>
+            <p class="paper-authors-full hidden">Om Khangaonkar, Hadi J. Rad, Hamed Pirsiavash</p>
+            <p class="paper-affiliations">University of California, Davis; Shell; TU Delft</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Creates a systematic evaluation for 3D spatial consistency understanding in MLLMs by generating image pairs where one object violates 3D motion consistency across two views, then asking models to identify the inconsistent object. The scalable data generation method enables rigorous testing, revealing that SOTA MLLMs dramatically underperform humans, with fragile, attribute-dependent 3D understanding.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-10">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-10">
+                    <p>Well-designed probe of a genuine gap in MLLMs&#39; capabilities — multi-view 3D consistency is a prerequisite for real-world spatial understanding that current models clearly lack. The evaluation methodology (scalable generation of inconsistent pairs) is a useful contribution. However, the task is somewhat synthetic, and it&#39;s unclear how much performance on this correlates with downstream 3D reasoning tasks.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-10">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-10">
+                    <p>Spatial consistency is a fundamental property of the visual world and a key requirement for models that aim to understand physical reality. Despite recent advances, multimodal large language models (MLLMs) often struggle to reason about 3D geometry across multiple views. Rather than asking models to describe scene attributes, we introduce a more challenging task: given two views of the same scene, identify the object that violates 3D motion consistency. We propose a simple and scalable method for generating realistic, spatially inconsistent image pairs from multi-view scenes, enabling systematic evaluation of this capability. Results show that state-of-the-art MLLMs significantly underperform human observers and exhibit substantial variability across different scene attributes, revealing a fragile and incomplete understanding of 3D structure.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.00799" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.00799</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Benchmarks &amp; Evaluation&#34;, &#34;Multilingual&#34;]" style="--card-accent: #06b6d4">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #6366f1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Multilingual</span>
+                    
+                </div>
+                <span class="paper-number">#11</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.00909" target="_blank" rel="noopener">JAMMEval: A Refined Collection of Japanese Benchmarks for Reliable VLM Evaluation <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Issa Sugiura, Koki Maeda, Shuhei Kurita et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Issa Sugiura, Koki Maeda, Shuhei Kurita, Yusuke Oda, Daisuke Kawahara, Naoaki Okazaki</p>
+            <p class="paper-affiliations">Affiliations not clearly listed (likely Japanese academic institutions including Tokyo Institute of Technology based on author profiles)</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Systematically cleans and re-annotates seven existing Japanese VLM benchmarks through two rounds of human annotation, fixing ambiguous questions, incorrect answers, and visually-ungrounded solvable instances. The refined benchmarks produce more faithful scores, lower variance, and better model distinguishability — demonstrating that benchmark quality issues can fundamentally distort VLM evaluation in non-English languages.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-11">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-11">
+                    <p>Important contribution for multilingual VLM evaluation. The meta-finding that existing Japanese benchmarks contain enough noise to distort model rankings is concerning and likely generalizes to most non-English evaluation resources. The two-round human annotation methodology is rigorous. This sets a quality standard that other languages should follow.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-11">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-11">
+                    <p>Reliable evaluation is essential for the development of vision-language models (VLMs). Japanese VQA benchmarks have undergone far less iterative refinement than their English counterparts, and many existing benchmarks contain issues such as ambiguous questions, incorrect answers, and instances that can be solved without visual grounding, undermining evaluation reliability and leading to misleading conclusions in model comparisons. JAMMEval is constructed by systematically refining seven existing Japanese benchmark datasets through two rounds of human annotation, improving both data quality and evaluation reliability. The refinement process produces evaluation scores that more faithfully reflect model capability, exhibit lower run-to-run variance, and improve model distinguishability, highlighting the importance of benchmark quality in obtaining reliable and informative evaluations.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.00909" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.00909</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Training &amp; Distillation&#34;, &#34;Infrastructure &amp; Tooling&#34;]" style="--card-accent: #f97316">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #f97316"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Training &amp; Distillation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #78716c"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Infrastructure &amp; Tooling</span>
+                    
+                </div>
+                <span class="paper-number">#12</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.04215" target="_blank" rel="noopener">DARE: Diffusion Large Language Models Alignment and Reinforcement Executor <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Jingyi Yang, Yuxian Jiang, XuHao Hu et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Jingyi Yang, Yuxian Jiang, XuHao Hu, Shuang Cheng, Biqing Qi, Jing Shao</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Provides the first unified open-source framework for post-training diffusion-based LLMs, consolidating the fragmented landscape of SFT, PEFT, preference optimization, and RL methods for masked and block diffusion models (LLaDA, Dream, SDAR, LLaDA2.x) into a single execution stack built on verl and OpenCompass. Aims to enable fair comparison and reproducibility across the rapidly growing dLLM space.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-12">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-12">
+                    <p>Infrastructure contribution rather than a research advance, but a timely and needed one. The diffusion LLM space is indeed fragmented, and a unified training/eval framework will accelerate research. Whether this gains adoption depends on engineering quality and community buy-in more than novelty. Good systems paper.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-12">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-12">
+                    <p>Diffusion large language models (dLLMs) are emerging as a compelling alternative to dominant autoregressive models, replacing strictly sequential token generation with iterative denoising and parallel generation dynamics. However, the open-source dLLM ecosystem remains fragmented across model families and post-training pipelines, where reinforcement learning objectives, rollout implementations and evaluation scripts are released as paper-specific codebases. This fragmentation slows research iteration, raises engineering burden, and makes fair comparison across algorithms difficult. We present DARE, an open framework for post-training and evaluating dLLMs. Built on top of verl and OpenCompass, DARE unifies supervised fine-tuning, parameter-efficient fine-tuning, preference optimization, and dLLM-specific reinforcement learning under a shared execution stack for both masked and block diffusion language models. DARE supports representative model families including LLaDA, Dream, SDAR, and LLaDA2.x, providing broad algorithmic coverage, reproducible benchmark evaluation, and practical acceleration.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.04215" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.04215</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Attention &amp; Interpretability&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #84cc16"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="1"/><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"/></svg> Attention &amp; Interpretability</span>
+                    
+                </div>
+                <span class="paper-number">#13</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.01280" target="_blank" rel="noopener">Look Twice: Training-Free Evidence Highlighting in Multimodal Large Language Models <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Marco Morini, Sara Sarto, Marcella Cornia et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Marco Morini, Sara Sarto, Marcella Cornia, Lorenzo Baraldi</p>
+            <p class="paper-affiliations">University of Modena and Reggio Emilia (UNIMORE), Italy</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Uses a pretrained MLLM&#39;s own attention patterns to identify the most relevant visual regions and textual evidence for a query, then re-highlights those cues through prompt-level markers that encourage the model to re-attend during generation. This training-free, architecture-agnostic &#34;look twice&#34; strategy consistently improves performance on knowledge-based VQA, vision-centric, and hallucination benchmarks without any fine-tuning.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-13">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-13">
+                    <p>Simple and elegant idea — use the model&#39;s attention to find what matters, then explicitly point the model back at it. The training-free nature and consistent gains across diverse benchmarks make it immediately useful. The insight that MLLMs already &#34;know&#34; what&#39;s relevant but fail to fully leverage it during generation echoes the VLMs Need Words finding (Paper #1) about internal representations being underutilized.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-13">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-13">
+                    <p>Answering questions about images often requires combining visual understanding with external knowledge. Multimodal Large Language Models (MLLMs) provide a natural framework for this setting, but they often struggle to identify the most relevant visual and textual evidence when answering knowledge-intensive queries. In such scenarios, models must integrate visual cues with retrieved textual evidence that is often noisy or only partially relevant, while also localizing fine-grained visual information in the image. In this work, we introduce Look Twice (LoT), a training-free inference-time framework that improves how pretrained MLLMs utilize multimodal evidence. Specifically, we exploit the model attention patterns to estimate which visual regions and retrieved textual elements are relevant to a query. The selected cues are highlighted through lightweight prompt-level markers that encourage the model to re-attend to the relevant evidence during generation. Experiments across multiple knowledge-based VQA benchmarks show consistent improvements over zero-shot MLLMs. Additional evaluations on vision-centric and hallucination-oriented benchmarks further demonstrate that visual evidence highlighting alone improves model performance in settings without textual context, all without additional training or architectural modifications.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.01280" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.01280</code>
+                </a>
+            </div>
+        </article>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Papers sourced from <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a></p>
+        <p><a href="https://github.com/adhirajghosh/arxiv-digest" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+
+    <script src="static/app.js"></script>
+</body>
+</html>
