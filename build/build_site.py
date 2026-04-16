@@ -108,18 +108,24 @@ def prepare_paper_data(papers: list[dict]) -> list[dict]:
 
 def build():
     """Main build entry point."""
-    # Setup output directory
+    # Setup output directory. Preserve superpowers/ docs and any dotfiles
+    # like .nojekyll that configure GitHub Pages.
+    PRESERVE = {"superpowers", ".nojekyll", "CNAME"}
     if os.path.exists(OUTPUT_DIR):
-        # Preserve specs/plans subdirectories
         for item in os.listdir(OUTPUT_DIR):
-            path = os.path.join(OUTPUT_DIR, item)
-            if item == "superpowers":
+            if item in PRESERVE:
                 continue
+            path = os.path.join(OUTPUT_DIR, item)
             if os.path.isdir(path):
                 shutil.rmtree(path)
             else:
                 os.remove(path)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    # Ensure .nojekyll exists so GitHub Pages serves files as-is.
+    nojekyll = os.path.join(OUTPUT_DIR, ".nojekyll")
+    if not os.path.exists(nojekyll):
+        open(nojekyll, "w").close()
 
     # Copy static assets
     static_out = os.path.join(OUTPUT_DIR, "static")
