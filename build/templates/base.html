@@ -1,0 +1,68 @@
+{# build/templates/base.html #}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}arXiv Digest{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                {{ sparkle_icon }} <span>arXiv Digest</span>
+            </a>
+            <nav class="date-nav" aria-label="Date navigation">
+                {% if prev_date %}
+                <a href="{{ prev_date }}.html" class="nav-btn" aria-label="Previous digest">{{ chevron_left_icon }}</a>
+                {% else %}
+                <span class="nav-btn disabled">{{ chevron_left_icon }}</span>
+                {% endif %}
+                <div class="date-selector">
+                    <button class="date-btn" id="date-toggle">
+                        {{ calendar_icon }}
+                        <span>{{ date_display }}</span>
+                        {{ chevron_down_icon }}
+                    </button>
+                    <div class="date-dropdown" id="date-dropdown">
+                        {% for d in all_dates %}
+                        <a href="{{ d.date }}.html" class="date-option{% if d.date == current_date %} active{% endif %}">{{ d.date_display }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if next_date %}
+                <a href="{{ next_date }}.html" class="nav-btn" aria-label="Next digest">{{ chevron_right_icon }}</a>
+                {% else %}
+                <span class="nav-btn disabled">{{ chevron_right_icon }}</span>
+                {% endif %}
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="search-toggle" aria-label="Search">{{ search_icon }}</button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon-sun">{{ sun_icon }}</span>
+                    <span class="theme-icon-moon">{{ moon_icon }}</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" id="search-input" placeholder="Search papers..." autocomplete="off">
+            <button class="icon-btn" id="search-close" aria-label="Close search">{{ x_icon }}</button>
+        </div>
+    </header>
+
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>Papers sourced from <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a></p>
+        <p><a href="https://github.com/adhirajghosh/arxiv-digest" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+
+    <script src="static/app.js"></script>
+</body>
+</html>
