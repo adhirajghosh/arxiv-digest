@@ -1,0 +1,96 @@
+{# build/templates/digest.html #}
+{% extends "base.html" %}
+{% block title %}arXiv Digest — {{ date_display }}{% endblock %}
+
+{% block content %}
+{# ── Hero: Top Highlights ── #}
+<section class="highlights-section">
+    <h2 class="section-title">{{ sparkle_icon }} Top Highlights</h2>
+    <div class="highlights-row">
+        {% for h in highlights %}
+        <div class="highlight-card" style="--topic-color: {{ h.color }}">
+            <div class="highlight-topic">{{ h.icon_svg }} <span>{{ h.topic_name }}</span></div>
+            <h3 class="highlight-title">
+                {% if h.arxiv_url %}<a href="{{ h.arxiv_url }}" target="_blank" rel="noopener">{{ h.title }}</a>{% else %}{{ h.title }}{% endif %}
+            </h3>
+            <p class="highlight-summary">{{ h.summary }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{# ── Daily Trend ── #}
+{% if overall_trend %}
+<section class="trend-section">
+    <div class="trend-card">
+        <h2 class="trend-label">{{ trend_icon }} Today's Trend</h2>
+        <p class="trend-text">{{ overall_trend }}</p>
+    </div>
+</section>
+{% endif %}
+
+{# ── Topic Filter Bar ── #}
+<section class="filter-section" id="filter-bar">
+    <div class="filter-row">
+        <button class="topic-pill active" data-topic="all">
+            All <span class="pill-count">{{ papers|length }}</span>
+        </button>
+        {% for topic in topic_summary %}
+        <button class="topic-pill" data-topic="{{ topic.name }}" style="--pill-color: {{ topic.color }}">
+            {{ topic.icon_svg }} {{ topic.name }} <span class="pill-count">{{ topic.count }}</span>
+        </button>
+        {% endfor %}
+    </div>
+</section>
+
+{# ── Paper Cards Grid ── #}
+<section class="papers-section">
+    <div class="papers-grid">
+        {% for paper in papers %}
+        <article class="paper-card" data-topics="{{ paper.topic_names_json }}" style="--card-accent: {{ paper.topics[0].color }}">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    {% for t in paper.topics %}
+                    <span class="paper-topic-pill" style="--pill-color: {{ t.color }}">{{ t.icon_svg }} {{ t.name }}</span>
+                    {% endfor %}
+                </div>
+                <span class="paper-number">#{{ paper.number }}</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="{{ paper.arxiv_url }}" target="_blank" rel="noopener">{{ paper.title }} {{ external_link_icon }}</a>
+            </h3>
+
+            <p class="paper-authors">{{ paper.authors_short }}{% if paper.has_more_authors %} <button class="expand-authors" aria-label="Show all authors">+more</button>{% endif %}</p>
+            <p class="paper-authors-full hidden">{{ paper.authors }}</p>
+            <p class="paper-affiliations">{{ paper.affiliations }}</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>{{ paper.tldr }}</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-{{ paper.number }}">Show take {{ chevron_down_icon }}</button>
+                <div class="expandable-content" id="take-{{ paper.number }}">
+                    <p>{{ paper.take }}</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-{{ paper.number }}">Show abstract {{ chevron_down_icon }}</button>
+                <div class="expandable-content" id="abstract-{{ paper.number }}">
+                    <p>{{ paper.abstract }}</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="{{ paper.arxiv_url }}" target="_blank" rel="noopener" class="arxiv-btn">
+                    {{ external_link_icon }} <code>{{ paper.arxiv_id }}</code>
+                </a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
