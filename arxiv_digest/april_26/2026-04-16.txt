@@ -1,0 +1,143 @@
+# arXiv Digest — April 16, 2026
+
+## Top Highlights Today
+- **EXAONE 4.5 Technical Report** — LG's first open-weight industrial VLM with strong Korean-English bilingual OCR/document understanding, a rare technical report of an open-weight production-scale VLM with disclosed pretraining pipeline.
+- **Reasoning Resides in Layers** — Layer-selective merging restores temporal reasoning in video-LLMs that is otherwise eroded by multimodal adaptation; clean mechanistic finding about where reasoning "lives".
+- **ArtifactWorld** — Uses video generation priors to fix 3DGS artifacts at scale (107.5K paired clips), a nice bridge between generative video models and 3D reconstruction.
+- **Beyond Scores** — Diagnostic LLM evaluation via fine-grained ability decomposition, pushing past single aggregate scores toward per-ability profiling and targeted improvement.
+- **Universal NER v2** — Massively multilingual NER benchmark extending UNER collaboratively; an evergreen resource for low-resource multilingual research.
+
+## Papers
+
+### 1. EXAONE 4.5 Technical Report: LG's First Open-Weight Vision-Language Model for Industrial Intelligence
+**Authors:** LG AI Research team (details not clearly listed in accessible sources)
+**Affiliations:** LG AI Research
+**Link:** https://arxiv.org/abs/2604.08644
+**Abstract:** EXAONE 4.5 is LG's first open-weight vision-language model positioned for industrial intelligence applications. The model acquires capabilities in processing complex multimodal data — from general image-text pairs to highly structured OCR, STEM diagrams, and specialized industrial content — through a rigorous multi-stage pretraining pipeline. Datasets include English and Korean bilingual corpora constructed at character, word, and document levels.
+**TL;DR:** Open-weight VLM targeting industrial/enterprise use with emphasis on structured documents, STEM content, and bilingual (EN/KO) OCR. Notable because it discloses a multi-stage pretraining recipe rather than only releasing weights. Bilingual document-level training data is a distinguishing recipe choice.
+**Take:** Industrial/vertical VLMs are increasingly where the interesting data-centric work happens; the value of this report depends heavily on whether the training recipe is described concretely enough to reproduce. Korean-English balance is welcome against the usual English-only axis.
+
+---
+
+### 2. Reasoning Resides in Layers: Restoring Temporal Reasoning in Video-Language Models with Layer-Selective Merging
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.11399
+**Abstract:** Multimodal adaptation equips large language models with perceptual capabilities but often weakens the reasoning ability inherited from language-only pretraining. This trade-off is especially pronounced in video-language models, where visual-temporal alignment impairs multi-hop temporal reasoning. The paper proposes a layer-selective merging procedure that fuses reasoning-critical layers from the pre-adaptation LLM with perception-critical layers from the adapted video-LM.
+**TL;DR:** Video-LLMs lose temporal reasoning during visual adaptation; selectively merging reasoning-critical layers from the base LLM with perception-critical layers of the video model recovers reasoning without sacrificing perception. A layer-wise mechanistic take on the perception↔reasoning tradeoff.
+**Take:** This framing — "reasoning resides in specific layers" — is the interesting claim and should generalize beyond video; the question is whether the "layer-critical" identification holds up under scaling and across diverse video benchmarks or is a curated win.
+
+---
+
+### 3. OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.11804
+**Abstract:** Human-Object Interaction (HOI) Video Generation aims to synthesize high-quality HOI videos conditioned on text, reference images, audio, and pose. OmniShow proposes a unified conditioning framework handling all four modalities jointly, with modality-balanced training and an HOI-specialized evaluation pipeline.
+**TL;DR:** A multi-conditional HOI video generator that unifies text, image, audio, and pose conditioning in one model. Targets the gap between generic T2V and physically grounded HOI synthesis. Framed as a generation + evaluation contribution.
+**Take:** "All modalities at once" is a crowded space; the interesting question is whether joint conditioning actually helps HOI-specific metrics (contact fidelity, interaction plausibility) versus just stacking controls. Without a public, careful HOI benchmark the evaluation claim will be hard to trust.
+
+---
+
+### 4. ArtifactWorld: Scaling 3D Gaussian Splatting Artifact Restoration via Video Generation Models
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12251
+**Abstract:** ArtifactWorld is a framework for 3DGS artifact repair through systematic data expansion and a homogeneous dual-model paradigm. The paper establishes a fine-grained phenomenological taxonomy of 3DGS artifacts and constructs a training set of 107.5K diverse paired video clips, leveraging video generation priors to restore degraded Gaussian Splats.
+**TL;DR:** Uses a large paired video dataset (107.5K clips) and a video diffusion prior to systematically repair artifacts in 3D Gaussian Splatting reconstructions. Pairs a taxonomy of common 3DGS failure modes with a scalable restoration recipe.
+**Take:** A compelling bridge between generative video priors and 3D reconstruction — if the taxonomy is principled and the data scaling holds, this could become a standard tool. The risk is that video priors "hallucinate" geometry where 3DGS was simply under-observed.
+
+---
+
+### 5. Beyond Scores: Diagnostic LLM Evaluation via Fine-Grained Abilities
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12191
+**Abstract:** Current LLM evaluations aggregate performance across diverse tasks into single scores, obscuring fine-grained ability variation. The paper proposes a diagnostic framework that decomposes composite benchmarks into fine-grained ability axes, enabling per-ability profiling and targeted improvement.
+**TL;DR:** Argues the standard "one aggregate number" view of LLM benchmarks hides ability-level heterogeneity; introduces a decomposition into fine-grained ability axes for diagnostic profiling. A science-of-benchmarking contribution.
+**Take:** The direction is right — aggregate leaderboard scores are an impoverished signal. Whether "fine-grained ability" decompositions are well-identified or leak into each other is where the rubber meets the road; expect useful profiles but fragile absolute comparisons.
+
+---
+
+### 6. Decomposing and Reducing Hidden Measurement Error in LLM Evaluation Pipelines
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.11581
+**Abstract:** LLM evaluation scores carry hidden uncertainty: rephrasing prompts, switching judge models, or changing temperature can shift results enough to flip rankings. The paper decomposes the variance sources in LLM evaluation pipelines (prompt, judge, decoding, sampling) and proposes variance-reducing estimators that yield more reliable ranking conclusions.
+**TL;DR:** Treats LLM eval as a measurement problem and systematically decomposes its error sources — prompt wording, judge choice, decoding temperature, sample variance — then proposes variance-reducing estimators. Complements "Beyond Scores" nicely.
+**Take:** A long-overdue treatment. If the variance decomposition generalizes across benchmark families and the proposed estimators are cheap, this should be adopted widely; the risk is that the remedies are too specific to the experimental settings tested.
+
+---
+
+### 7. Universal NER v2: Towards a Massively Multilingual Named Entity Recognition Benchmark
+**Authors:** UNER consortium (affiliations not clearly listed)
+**Affiliations:** UNER consortium
+**Link:** https://arxiv.org/abs/2604.12744
+**Abstract:** UNER is a collaborative dataset for multilingual named-entity annotations, built to support research on NER methods in a cross-linguistic setting. UNER v2 substantially expands coverage and consistency of annotations across typologically diverse languages, providing a standardized evaluation setup for multilingual models.
+**TL;DR:** Expansion of the Universal NER collaborative benchmark to many more languages with consistent annotation. A community resource rather than a new model. Useful for multilinguality and transfer studies.
+**Take:** Collaborative multilingual benchmarks are valuable but only if the annotation consistency claims hold; past experience with multilingual datasets shows quality varies sharply across contributors. The real test is whether cross-lingual patterns replicate across model families.
+
+---
+
+### 8. ReasonXL: Shifting LLM Reasoning Language Without Sacrificing Performance
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12378
+**Abstract:** Introduces ReasonXL, a large-scale parallel corpus of cross-domain reasoning traces spanning five European languages (English, German, French, Italian, Spanish), with over two million aligned samples per language. Supports cross-lingual transfer studies, analysis of reasoning traces, curriculum design for multilingual models, and evaluation of language-specific chain-of-thought faithfulness.
+**TL;DR:** A 2M-per-language parallel corpus of reasoning traces across 5 European languages, enabling fair study of whether reasoning transfers across languages without performance loss. A substantive multilingual data release.
+**Take:** European languages are relatively well-resourced already; the scientific punch depends on whether they extend this to lower-resource languages or at least show robust transfer-to-low-resource claims. Parallel reasoning data is genuinely useful infrastructure.
+
+---
+
+### 9. Boosting Visual Instruction Tuning with Self-Supervised Guidance
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12966
+**Abstract:** Augments visual instruction tuning with a small number of visually grounded self-supervised tasks expressed as natural language instructions. The method is lightweight and complements existing mid-training stages that inject knowledge before instruction tuning.
+**TL;DR:** Adds a handful of self-supervised visual objectives, expressed as natural-language instructions, alongside standard visual instruction tuning. Cheap to add and reports gains across VLM benchmarks.
+**Take:** "Cheap, drops into existing recipes" is the right framing for data-centric VLM work. Worth watching if gains hold on contamination-robust benchmarks rather than the usual saturated suites.
+
+---
+
+### 10. GeoAlign: Geometric Feature Realignment for MLLM Spatial Reasoning
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12630
+**Abstract:** GeoAlign targets the long-standing weakness of MLLMs in spatial reasoning by realigning geometric features drawn from multiple vision encoder layers. The method explicitly injects layer-selected geometric priors into the MLLM's fused representation, improving performance on spatial QA and 3D-aware tasks.
+**TL;DR:** Improves MLLM spatial reasoning by pulling geometric features from multiple vision-encoder layers and realigning them into the LLM's input stream. Targets 3D / spatial QA weak spots of current VLMs.
+**Take:** Multi-layer geometric features is a well-trodden idea; the interesting piece would be whether "realignment" yields real 3D-aware behavior or just marginal benchmark bumps. Evidence on out-of-distribution spatial tasks is what to look for.
+
+---
+
+### 11. Fast-dVLM: Efficient Block-Diffusion VLM via Direct Conversion from Autoregressive VLM
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.06832
+**Abstract:** Fast-dVLM converts a pretrained autoregressive VLM into a block-diffusion VLM with KV-cache compatibility. Experiments across 11 multimodal benchmarks demonstrate that Fast-dVLM matches its AR counterpart's quality while offering the parallel decoding benefits of diffusion-style generation.
+**TL;DR:** Directly retrofits an existing autoregressive VLM into a block-diffusion VLM without full retraining, keeping KV-cache compatibility and matching AR quality on 11 benchmarks. Practical path to parallel decoding in VLMs.
+**Take:** Block-diffusion with KV-cache retention is the right pragmatic compromise; the open question is how this scales when sequence lengths grow and whether the "matches AR" claim holds on reasoning-heavy suites, not just perception benchmarks.
+
+---
+
+### 12. Benchmarking Deflection and Hallucination in Large Vision-Language Models
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12033
+**Abstract:** Large Vision-Language Models increasingly rely on retrieval to answer knowledge-intensive multimodal questions, but existing benchmarks overlook conflicts between visual and textual evidence. This benchmark probes how VLMs behave when the retrieved text contradicts the image (deflection) and how that shapes hallucination rates.
+**TL;DR:** A benchmark that stresses VLMs with deliberate visual-textual evidence conflicts to measure both "deflection" (over-reliance on one modality) and hallucination. Rare focused benchmark on the retrieval-vs-perception failure mode.
+**Take:** The failure mode is important and underexplored; benchmark quality will depend on whether the conflict scenarios are naturalistic or adversarial-contrived. If it's the latter, models will quickly overfit to the eval.
+
+---
+
+### 13. AtlasOCR: Building the First Open-Source Darija OCR Model with Vision Language Models
+**Authors:** Affiliations not clearly listed
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.08070
+**Abstract:** AtlasOCR is the first open-source OCR model for Moroccan Darija, built by fine-tuning a 3B parameter Vision Language Model. The release includes training data, model weights, and evaluation on Darija document corpora, addressing a severe low-resource gap in Arabic OCR.
+**TL;DR:** First open OCR model for Moroccan Darija, fine-tuned from a 3B VLM and released with data and weights. A concrete, useful contribution to low-resource multilingual multimodal work.
+**Take:** These language-specific OCR releases are where multilinguality shows its real value; the impact is local but tangible. The 3B backbone choice is sensible for a low-resource setting but caps the ceiling — a bigger-model comparison would strengthen the claims.
+
+---
+
+## Overall Trend Today
+Two threads dominate today's submissions: (1) a maturing "science of benchmarking" push, with multiple papers directly targeting aggregate-score hiding, judge/temperature variance, and modality-conflict robustness in evaluation pipelines — a welcome correction to leaderboard-chasing culture. (2) Continued data- and recipe-centric VLM work, from EXAONE 4.5's bilingual industrial pipeline to lightweight self-supervised tuning boosts and block-diffusion retrofits. Multilinguality is showing up as both benchmarks (UNER v2) and targeted low-resource releases (AtlasOCR, ReasonXL for European languages), though low-resource coverage remains thin. Video and 3D are increasingly converging, with video-generation priors being repurposed for 3DGS restoration and video-LLMs being dissected for where reasoning lives. Absent today: big foundation-model announcements — the field seems to be pausing to measure itself.

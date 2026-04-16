@@ -36,4 +36,6 @@ def test_index_redirects_to_latest():
     build()
     with open(os.path.join(OUTPUT_DIR, "index.html")) as f:
         html = f.read()
-    assert "2026-04-09.html" in html
+    files = find_digest_files()
+    latest_date = max(d for d, _ in files)
+    assert f"{latest_date}.html" in html
