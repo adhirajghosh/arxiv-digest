@@ -22,17 +22,27 @@
                 <a href="2026-04-09.html" class="nav-btn" aria-label="Previous digest"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a>
                 
                 <div class="date-selector">
-                    <button class="date-btn" id="date-toggle">
+                    <button class="date-btn" id="date-toggle" aria-haspopup="dialog" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
                         <span>April 16, 2026</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
-                    <div class="date-dropdown" id="date-dropdown">
-                        
-                        <a href="2026-04-16.html" class="date-option active">April 16, 2026</a>
-                        
-                        <a href="2026-04-09.html" class="date-option">April 9, 2026</a>
-                        
+                    <div class="calendar-popover" id="calendar-popover" role="dialog" aria-label="Select digest date"
+                         data-available-dates="[&#34;2026-04-16&#34;, &#34;2026-04-09&#34;]"
+                         data-current-date="2026-04-16">
+                        <div class="calendar-header">
+                            <button class="calendar-nav-btn" id="calendar-prev" aria-label="Previous month"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+                            <span class="calendar-month-label" id="calendar-month-label">—</span>
+                            <button class="calendar-nav-btn" id="calendar-next" aria-label="Next month"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+                        </div>
+                        <div class="calendar-dow" aria-hidden="true">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                        <div class="calendar-grid" id="calendar-grid"></div>
+                        <div class="calendar-footer">
+                            <button class="calendar-link" id="calendar-latest">Jump to latest</button>
+                            <span class="calendar-count"><span id="calendar-count-num">0</span> digests</span>
+                        </div>
                     </div>
                 </div>
                 

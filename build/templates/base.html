@@ -23,15 +23,27 @@
                 <span class="nav-btn disabled">{{ chevron_left_icon }}</span>
                 {% endif %}
                 <div class="date-selector">
-                    <button class="date-btn" id="date-toggle">
+                    <button class="date-btn" id="date-toggle" aria-haspopup="dialog" aria-expanded="false">
                         {{ calendar_icon }}
                         <span>{{ date_display }}</span>
                         {{ chevron_down_icon }}
                     </button>
-                    <div class="date-dropdown" id="date-dropdown">
-                        {% for d in all_dates %}
-                        <a href="{{ d.date }}.html" class="date-option{% if d.date == current_date %} active{% endif %}">{{ d.date_display }}</a>
-                        {% endfor %}
+                    <div class="calendar-popover" id="calendar-popover" role="dialog" aria-label="Select digest date"
+                         data-available-dates="{{ all_dates_json }}"
+                         data-current-date="{{ current_date }}">
+                        <div class="calendar-header">
+                            <button class="calendar-nav-btn" id="calendar-prev" aria-label="Previous month">{{ chevron_left_icon }}</button>
+                            <span class="calendar-month-label" id="calendar-month-label">—</span>
+                            <button class="calendar-nav-btn" id="calendar-next" aria-label="Next month">{{ chevron_right_icon }}</button>
+                        </div>
+                        <div class="calendar-dow" aria-hidden="true">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                        <div class="calendar-grid" id="calendar-grid"></div>
+                        <div class="calendar-footer">
+                            <button class="calendar-link" id="calendar-latest">Jump to latest</button>
+                            <span class="calendar-count"><span id="calendar-count-num">0</span> digests</span>
+                        </div>
                     </div>
                 </div>
                 {% if next_date %}

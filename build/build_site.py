@@ -155,6 +155,7 @@ def build():
 
     # All dates for navigation
     all_dates = [{"date": d["date"], "date_display": d["date_display"]} for d in digests]
+    all_dates_json = json.dumps([d["date"] for d in digests])
 
     # Setup Jinja2
     env = Environment(
@@ -193,6 +194,7 @@ def build():
             prev_date=prev_date,
             next_date=next_date,
             all_dates=all_dates,
+            all_dates_json=all_dates_json,
             highlights=highlights,
             overall_trend=digest["overall_trend"],
             topic_summary=topic_summary,
