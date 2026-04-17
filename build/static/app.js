@@ -126,16 +126,16 @@
                 if (hasDigest) {
                     el = document.createElement('a');
                     el.href = dateStr + '.html';
+                    el.setAttribute('aria-label', 'View digest for ' + dateStr);
                 } else {
                     el = document.createElement('div');
                 }
                 el.className = 'calendar-cell';
                 if (hasDigest) el.classList.add('has-digest');
+                else el.classList.add('no-digest');
                 if (isCurrent) el.classList.add('active');
-                if (isToday && !isCurrent) el.classList.add('today');
+                if (isToday) el.classList.add('today');
                 el.textContent = d;
-                el.setAttribute('role', hasDigest ? 'link' : 'presentation');
-                if (hasDigest) el.setAttribute('aria-label', 'View digest for ' + dateStr);
                 calendarGrid.appendChild(el);
             }
         }
