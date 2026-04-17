@@ -64,38 +64,9 @@
         function pad(n) { return n < 10 ? '0' + n : '' + n; }
         function fmt(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
 
-        function hasDigestInMonth(y, m) {
-            const prefix = y + '-' + pad(m + 1) + '-';
-            for (let i = 0; i < availableDates.length; i++) {
-                if (availableDates[i].indexOf(prefix) === 0) return true;
-            }
-            return false;
-        }
-
-        function earliestMonth() {
-            if (availableDates.length === 0) return null;
-            const last = availableDates[availableDates.length - 1]; // oldest
-            const p = last.split('-');
-            return { y: parseInt(p[0], 10), m: parseInt(p[1], 10) - 1 };
-        }
-
-        function latestMonth() {
-            if (availableDates.length === 0) return null;
-            const first = availableDates[0]; // newest
-            const p = first.split('-');
-            return { y: parseInt(p[0], 10), m: parseInt(p[1], 10) - 1 };
-        }
-
         function renderCalendar() {
             calendarLabel.textContent = MONTH_NAMES[viewMonth] + ' ' + viewYear;
-
-            // Previous/next month enablement
-            const earliest = earliestMonth();
-            const latest = latestMonth();
-            const atEarliest = earliest && viewYear === earliest.y && viewMonth === earliest.m;
-            const atLatest = latest && viewYear === latest.y && viewMonth === latest.m;
-            calendarPrev.disabled = !earliest || atEarliest;
-            calendarNext.disabled = !latest || atLatest;
+            // Arrows are always enabled so users can freely browse months.
 
             // Compute grid — Monday-first weeks
             const firstOfMonth = new Date(viewYear, viewMonth, 1);

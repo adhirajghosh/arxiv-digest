@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the arXiv Digest static site from .txt digest files."""
 import glob
+import hashlib
 import json
 import os
 import re
@@ -106,6 +107,17 @@ def prepare_paper_data(papers: list[dict]) -> list[dict]:
     return papers
 
 
+def _compute_build_version() -> str:
+    """Short hash of static assets so <link>/<script> tags bust browser cache."""
+    h = hashlib.sha256()
+    for name in ("style.css", "app.js"):
+        path = os.path.join(STATIC_DIR, name)
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                h.update(f.read())
+    return h.hexdigest()[:8]
+
+
 def build():
     """Main build entry point."""
     # Setup output directory. Preserve superpowers/ docs and any dotfiles
@@ -132,6 +144,9 @@ def build():
     if os.path.exists(static_out):
         shutil.rmtree(static_out)
     shutil.copytree(STATIC_DIR, static_out)
+
+    # Cache-busting version derived from static asset contents
+    build_version = _compute_build_version()
 
     # Load topics
     topics = load_topics()
@@ -199,6 +214,7 @@ def build():
             overall_trend=digest["overall_trend"],
             topic_summary=topic_summary,
             papers=papers,
+            build_version=build_version,
             **common_icons,
         )
 
