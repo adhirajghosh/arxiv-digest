@@ -1,0 +1,842 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apr 17 · arXiv Daily</title>
+    <link rel="icon" type="image/svg+xml" href="static/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css?v=c65e0935">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="arXiv Daily home">
+                <span class="logo-mark" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 32 32">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#8b5cf6"/>
+                                <stop offset="100%" stop-color="#ec4899"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <rect x="9" y="10" width="12" height="1.8" rx="0.9" fill="#ffffff" fill-opacity="0.95"/>
+                        <rect x="9" y="15" width="14" height="1.8" rx="0.9" fill="#ffffff" fill-opacity="0.75"/>
+                        <rect x="9" y="20" width="9" height="1.8" rx="0.9" fill="#ffffff" fill-opacity="0.55"/>
+                        <path d="M25 6.5 L26 4.5 L27 6.5 L29 7.5 L27 8.5 L26 10.5 L25 8.5 L23 7.5 Z" fill="#ffffff"/>
+                    </svg>
+                </span>
+                <span class="logo-text"><span class="logo-brand">arXiv</span><span class="logo-accent">Daily</span></span>
+            </a>
+            <nav class="date-nav" aria-label="Date navigation">
+                
+                <a href="2026-04-16.html" class="nav-btn" aria-label="Previous digest"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a>
+                
+                <div class="date-selector">
+                    <button class="date-btn" id="date-toggle" aria-haspopup="dialog" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <span>April 17, 2026</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="calendar-popover" id="calendar-popover" role="dialog" aria-label="Select digest date"
+                         data-available-dates="[&#34;2026-04-17&#34;, &#34;2026-04-16&#34;, &#34;2026-04-09&#34;]"
+                         data-current-date="2026-04-17">
+                        <div class="calendar-header">
+                            <button class="calendar-nav-btn" id="calendar-prev" aria-label="Previous month"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+                            <span class="calendar-month-label" id="calendar-month-label">—</span>
+                            <button class="calendar-nav-btn" id="calendar-next" aria-label="Next month"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+                        </div>
+                        <div class="calendar-dow" aria-hidden="true">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                        <div class="calendar-grid" id="calendar-grid"></div>
+                        <div class="calendar-footer">
+                            <button class="calendar-link" id="calendar-latest">Jump to latest</button>
+                            <span class="calendar-count"><span id="calendar-count-num">0</span> digests</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="nav-btn disabled"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+                
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="search-toggle" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon-sun"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+                    <span class="theme-icon-moon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+                </button>
+            </div>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" id="search-input" placeholder="Search papers..." autocomplete="off">
+            <button class="icon-btn" id="search-close" aria-label="Close search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        </div>
+    </header>
+
+    <main class="main">
+        
+
+<section class="highlights-section">
+    <h2 class="section-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> Top Highlights</h2>
+    <div class="highlights-row">
+        
+        <div class="highlight-card" style="--topic-color: #6366f1">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> <span>Multilingual</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.13286" target="_blank" rel="noopener">English is Not All You Need</a>
+            </h3>
+            <p class="highlight-summary">— 220-run controlled study showing even a single added non-English language during post-training lifts both English and cross-lingual performance.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #8b5cf6">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span>General</span></div>
+            <h3 class="highlight-title">
+                MERIT / Reasoning Resides in Layers
+            </h3>
+            <p class="highlight-summary">— Training-free, layer-selective merging restores temporal reasoning in video-LLMs — clean diagnosis that visual alignment damages specific layers.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #8b5cf6">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> <span>VLM Architecture</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.08644" target="_blank" rel="noopener">EXAONE 4.5</a>
+            </h3>
+            <p class="highlight-summary">— LG&#39;s first open-weight VLM for industrial intelligence, a new data point alongside Qwen3-VL / InternVL.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #06b6d4">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> <span>Benchmarks &amp; Evaluation</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.13418" target="_blank" rel="noopener">MERRIN</a>
+            </h3>
+            <p class="highlight-summary">— Multimodal retrieval + multi-hop reasoning over noisy, conflicting web evidence.</p>
+        </div>
+        
+        <div class="highlight-card" style="--topic-color: #a855f7">
+            <div class="highlight-topic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> <span>Generation</span></div>
+            <h3 class="highlight-title">
+                <a href="https://arxiv.org/abs/2604.13030" target="_blank" rel="noopener">Generative Refinement Networks</a>
+            </h3>
+            <p class="highlight-summary">— Hierarchical Binary Quantization attacks the tokenization bottleneck in visual synthesis.</p>
+        </div>
+        
+    </div>
+</section>
+
+
+
+<section class="trend-section">
+    <div class="trend-card">
+        <h2 class="trend-label"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Today's Trend</h2>
+        <p class="trend-text">Today leans heavily on correction-after-adaptation: MERIT for video-LLMs, GeoAlign for spatial MLLMs, and regional-adaptation work all argue that multimodal adaptation damages specific capabilities in predictable ways and that targeted recovery (merging, re-aligning, distilling) beats adaptation from scratch. Multilinguality is having a strong day too — three substantial papers (English is Not All You Need, Bridging Linguistic Gaps, ReasonXL) making the same point from different angles: English-centric training is a choice, not a default, and the choice is expensive. On data and benchmarks, MERRIN and SceneScribe-1M stand out, both pushing evaluation and training into messier, more realistic regimes. Generative-image work (GRN) is more speculative — interesting reframing of tokenization, unproven at scale. The long-video thread continues with practical token-budget engineering (Tempo, Mosaic) rather than architectural breakthroughs.</p>
+    </div>
+</section>
+
+
+
+<section class="filter-section" id="filter-bar">
+    <div class="filter-row">
+        <button class="topic-pill active" data-topic="all">
+            All <span class="pill-count">14</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="VLM Architecture" style="--pill-color: #8b5cf6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture <span class="pill-count">7</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Benchmarks &amp; Evaluation" style="--pill-color: #06b6d4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation <span class="pill-count">5</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Reasoning" style="--pill-color: #eab308">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning <span class="pill-count">4</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Multilingual" style="--pill-color: #6366f1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Multilingual <span class="pill-count">2</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Video Understanding" style="--pill-color: #10b981">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding <span class="pill-count">2</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="3D &amp; Spatial" style="--pill-color: #ec4899">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> 3D &amp; Spatial <span class="pill-count">2</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Training &amp; Distillation" style="--pill-color: #f97316">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Training &amp; Distillation <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Generation" style="--pill-color: #a855f7">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> Generation <span class="pill-count">1</span>
+        </button>
+        
+        <button class="topic-pill" data-topic="Diffusion Models" style="--pill-color: #d946ef">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> Diffusion Models <span class="pill-count">1</span>
+        </button>
+        
+    </div>
+</section>
+
+
+<section class="papers-section">
+    <div class="papers-grid">
+        
+        <article class="paper-card" data-topics="[&#34;Multilingual&#34;, &#34;Training &amp; Distillation&#34;]" style="--card-accent: #6366f1">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #6366f1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Multilingual</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #f97316"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Training &amp; Distillation</span>
+                    
+                </div>
+                <span class="paper-number">#1</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.13286" target="_blank" rel="noopener">English is Not All You Need: Systematically Exploring the Role of Multilinguality in LLM Post-Training <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Mehak Dhaliwal, Shashwat Chaurasia, Yao Qin et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Mehak Dhaliwal, Shashwat Chaurasia, Yao Qin, Dezhi Hong, Thomas Butler</p>
+            <p class="paper-affiliations">UC Santa Barbara; Amazon</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Rare controlled ablation on multilingual SFT data at 8B with parallel translations isolating the coverage variable. Adding even one non-English language improves English; wider coverage disproportionately helps low-resource tongues.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-1">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-1">
+                    <p>Parallel-translation design says something cleaner about coverage vs. quantity than most &#34;multilingual matters&#34; papers. Whether it generalizes past 8B and past translated data is the open question.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-1">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-1">
+                    <p>A systematic, controlled study of the interplay between training language coverage, model scale, and task domain based on 220 SFT runs on parallel translated multilingual data mixtures spanning math reasoning and API calling, with models up to 8B. Increasing language coverage is largely beneficial across tasks and scales, with low-resource languages benefiting most; incorporating a single non-English language improves both English and cross-lingual generalization.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.13286" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.13286</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Multilingual&#34;, &#34;Benchmarks &amp; Evaluation&#34;]" style="--card-accent: #6366f1">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #6366f1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Multilingual</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                </div>
+                <span class="paper-number">#2</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.10590" target="_blank" rel="noopener">Bridging Linguistic Gaps: Cross-Lingual Mapping in Pre-Training and Dataset for Enhanced Multilingual LLM Performance <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Auxiliary cross-lingual mapping objective at pre-training time (not post-training), targeting the high/low-resource gap where it is baked in.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-2">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-2">
+                    <p>Pre-training-stage interventions are under-explored because they are expensive. If ablations are honest about scale, this is more interesting than another SFT paper.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-2">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-2">
+                    <p>Multilingual LLMs struggle with cross-lingual tasks due to data imbalances and monolingual bias in pre-training. Introduces a Cross-Lingual Mapping Task during pre-training that enhances cross-lingual alignment without compromising monolingual fluency, plus a supporting dataset.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.10590" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.10590</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Video Understanding&#34;, &#34;Reasoning&#34;]" style="--card-accent: #10b981">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #10b981"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #eab308"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning</span>
+                    
+                </div>
+                <span class="paper-number">#3</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.11399" target="_blank" rel="noopener">Reasoning Resides in Layers: Restoring Temporal Reasoning in Video-Language Models with Layer-Selective Merging <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Zihang Fu, Haonan Wang, Jian Kang et al. <button class="expand-authors" aria-label="Show all authors">+more</button></p>
+            <p class="paper-authors-full hidden">Zihang Fu, Haonan Wang, Jian Kang, Kenji Kawaguchi, Jiaying Wu</p>
+            <p class="paper-affiliations">Affiliations not clearly listed (author list suggests NUS and collaborators)</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Observes adaptation damages reasoning in specific layers, then recovers them by selectively merging from the text backbone — no training. Beats uniform merging and random layer selection.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-3">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-3">
+                    <p>Merging as a surgical diagnostic tool is a nice move. Whether &#34;reasoning resides in layers&#34; is durable or setup-specific is what to watch.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-3">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-3">
+                    <p>Multimodal adaptation gives LLMs perception but weakens reasoning — especially in video-LLMs where visual alignment impairs temporal reasoning. MERIT is a training-free, task-driven merging framework that searches layer-wise self-attention merging recipes between a video-LLM and its text-only backbone, improving temporal reasoning while preserving perception; generalizes across four benchmarks.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.11399" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.11399</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                </div>
+                <span class="paper-number">#4</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.08644" target="_blank" rel="noopener">EXAONE 4.5 Technical Report: LG&#39;s First Open-Weight Vision-Language Model for Industrial Intelligence <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">EXAONE / LG AI Research team</p>
+            <p class="paper-authors-full hidden">EXAONE / LG AI Research team</p>
+            <p class="paper-affiliations">LG AI Research</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Another frontier-lab open VLM release, emphasis on industrial-document understanding.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-4">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-4">
+                    <p>Tech reports are only as good as their evals. Interesting question is whether EXAONE 4.5 clears general VLM bars or hides behind &#34;industrial&#34; framing.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-4">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-4">
+                    <p>Technical report for LG AI Research&#39;s first open-weight VLM, focused on industrial-intelligence deployment (documents, schematics, charts).</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.08644" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.08644</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Generation&#34;, &#34;Diffusion Models&#34;]" style="--card-accent: #a855f7">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #a855f7"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> Generation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #d946ef"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> Diffusion Models</span>
+                    
+                </div>
+                <span class="paper-number">#5</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.13030" target="_blank" rel="noopener">Generative Refinement Networks for Visual Synthesis <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>HBQ as a replacement for continuous-latent diffusion and VQ-style tokenizers, with iterative refinement. Targets the many-step diffusion sampling cost.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-5">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-5">
+                    <p>&#34;Next-generation beats diffusion&#34; claims rarely survive compute-matched scaling. Watch the ablations.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-5">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-5">
+                    <p>Introduces GRNs, a visual synthesis paradigm addressing diffusion inefficiency via Hierarchical Binary Quantization (HBQ), reframing synthesis as iterative refinement over structured binary codes.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.13030" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.13030</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Benchmarks &amp; Evaluation&#34;, &#34;Reasoning&#34;]" style="--card-accent: #06b6d4">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #eab308"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning</span>
+                    
+                </div>
+                <span class="paper-number">#6</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.13418" target="_blank" rel="noopener">MERRIN: A Benchmark for Multimodal Evidence Retrieval and Reasoning in Noisy Web Environments <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Pushes multimodal evaluation into realistic web-messy regime: incomplete evidence, conflicting sources, modality selection as part of the task.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-6">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-6">
+                    <p>Benchmarks folding noise and conflict into the spec are badly needed. Risk: rankings dominated by retrieval scaffolding instead of reasoning. Check the baselines.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-6">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-6">
+                    <p>Agents must identify appropriate modality, retrieve relevant evidence, and multi-hop reason over noisy, conflicting, incomplete web sources.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.13418" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.13418</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Reasoning&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #eab308"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning</span>
+                    
+                </div>
+                <span class="paper-number">#7</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.13993" target="_blank" rel="noopener">Reward Design for Physical Reasoning in Vision-Language Models <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Reward-ablation paper for RL post-training on physics, a task type that exposes where VLMs paper over perception with language priors.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-7">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-7">
+                    <p>Useful only if the reward design generalizes beyond the training distribution. That is the thing to look for.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-7">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-7">
+                    <p>SOTA VLMs underperform humans on physics benchmarks; this paper investigates reward design choices for RL-based VLM training on physical reasoning tasks.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.13993" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.13993</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;3D &amp; Spatial&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #ec4899"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> 3D &amp; Spatial</span>
+                    
+                </div>
+                <span class="paper-number">#8</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.12630" target="_blank" rel="noopener">GeoAlign: Geometric Feature Realignment for MLLM Spatial Reasoning <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Targets the failure mode where MLLMs lose spatial precision during vision-text alignment, via dynamic multi-layer feature aggregation.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-8">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-8">
+                    <p>Spatial reasoning is a visible VLM weak point. Any training-light, benchmark-general fix matters — wait for third-party reproductions.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-8">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-8">
+                    <p>Dynamically aggregates multi-layer geometric features to realign MLLMs with actual spatial reasoning demands.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.12630" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.12630</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                </div>
+                <span class="paper-number">#9</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.11490" target="_blank" rel="noopener">Anthropogenic Regional Adaptation in Multimodal Vision-Language Model <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Targets systematic VLM failure on culturally/geographically specific content. GG-EZ uses filtered regional data plus merging without sacrificing global performance.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-9">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-9">
+                    <p>Overdue direction. Stands or falls on whether regional eval is representative or cherry-picked to failure modes of English-centric pretraining.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-9">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-9">
+                    <p>A paradigm to optimize model relevance to specific regional contexts while preserving global generalization, using the GG-EZ adaptation method (regional data filtering + model merging).</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.11490" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.11490</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Video Understanding&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #10b981"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 11h4"/><path d="M3 15h4"/><path d="M17 7h4"/><path d="M17 11h4"/><path d="M17 15h4"/></svg> Video Understanding</span>
+                    
+                </div>
+                <span class="paper-number">#10</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.08120" target="_blank" rel="noopener">Small Vision-Language Models are Smart Compressors for Long Video Understanding <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Cheap small VLM as local compressor feeding a larger model a denser representation. Practical two-stage recipe for hour-long video where token budgets dominate.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-10">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-10">
+                    <p>The obvious right design; the open question is how the small model&#39;s failure modes propagate. Needs adversarial / low-info clip stress tests.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-10">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-10">
+                    <p>Tempo adapts MLLMs for hour-long videos by using a small VLM as a local temporal compressor before a larger reasoning model.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.08120" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.08120</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Benchmarks &amp; Evaluation&#34;, &#34;3D &amp; Spatial&#34;]" style="--card-accent: #06b6d4">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #ec4899"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> 3D &amp; Spatial</span>
+                    
+                </div>
+                <span class="paper-number">#11</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.07990" target="_blank" rel="noopener">SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Richly annotated 1M-scale video dataset (text + camera + depth + 3D tracks). Supports camera-controllable T2V out of the box.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-11">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-11">
+                    <p>If poses and depth are reliable at 1M scale, this is the most valuable artifact in the batch. Check track quality and licensing.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-11">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-11">
+                    <p>1M in-the-wild videos annotated with text descriptions, camera parameters, dense depth, and consistent 3D point tracks. Supports text-to-video synthesis with and without camera control.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.07990" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.07990</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;Reasoning&#34;]" style="--card-accent: #eab308">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #eab308"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg> Reasoning</span>
+                    
+                </div>
+                <span class="paper-number">#12</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.12378" target="_blank" rel="noopener">ReasonXL: Shifting LLM Reasoning Language Without Sacrificing Performance <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Parallel reasoning traces — not just QA pairs — targeting the asymmetry that LLMs reason in English regardless of prompt language.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-12">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-12">
+                    <p>Right data unit for the problem and hard to construct. &#34;No performance sacrifice&#34; claim needs scrutiny beyond the surveyed domains and languages.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-12">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-12">
+                    <p>First large-scale parallel reasoning-trace corpus across five European languages (&gt;2M aligned samples per language), enabling language-transfer of CoT-style reasoning.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.12378" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.12378</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Benchmarks &amp; Evaluation&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                </div>
+                <span class="paper-number">#13</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.13268" target="_blank" rel="noopener">Indexing Multimodal Language Models for Large-Scale Image Retrieval <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Systems-side contribution for MLLM-as-retriever: how to index embeddings from decoder-style models. Data-infrastructure work for the LLM-everywhere era.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-13">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-13">
+                    <p>Throughput/memory have been blockers; any credible progress here flows directly into search, curation, and RAG.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-13">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-13">
+                    <p>Addresses using MLLMs as retrievers at scale, including indexing strategies that make MLLM embeddings practical for large-scale image retrieval.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.13268" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.13268</code>
+                </a>
+            </div>
+        </article>
+        
+        <article class="paper-card" data-topics="[&#34;VLM Architecture&#34;, &#34;Benchmarks &amp; Evaluation&#34;]" style="--card-accent: #8b5cf6">
+            <div class="paper-header">
+                <div class="paper-topics">
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #8b5cf6"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg> VLM Architecture</span>
+                    
+                    <span class="paper-topic-pill" style="--pill-color: #06b6d4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h.01"/><path d="M11 12h.01"/><path d="M15 16h.01"/><path d="M19 8h.01"/></svg> Benchmarks &amp; Evaluation</span>
+                    
+                </div>
+                <span class="paper-number">#14</span>
+            </div>
+
+            <h3 class="paper-title">
+                <a href="https://arxiv.org/abs/2604.13035" target="_blank" rel="noopener">SceneCritic: A Symbolic Evaluator for 3D Indoor Scene Synthesis <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </h3>
+
+            <p class="paper-authors">Not clearly listed in search data</p>
+            <p class="paper-authors-full hidden">Not clearly listed in search data</p>
+            <p class="paper-affiliations">Affiliations not clearly listed</p>
+
+            <div class="paper-tldr">
+                <h4>TL;DR</h4>
+                <p>Symbolic (not perceptual) scoring of intermediate scene structure — a more honest metric than VLM-as-judge for 3D generation.</p>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="take-14">Show take <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="take-14">
+                    <p>3D scene-gen evaluation has been weak. Usefulness depends on whether the symbolic rules are tight enough to be falsifiable.</p>
+                </div>
+            </div>
+
+            <div class="paper-expandable">
+                <button class="expand-btn" data-target="abstract-14">Show abstract <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                <div class="expandable-content" id="abstract-14">
+                    <p>A symbolic evaluator for LLM/VLM-generated 3D indoor scenes, grading intermediate layouts and scene graphs rather than just rendered output.</p>
+                </div>
+            </div>
+
+            <div class="paper-footer">
+                <a href="https://arxiv.org/abs/2604.13035" target="_blank" rel="noopener" class="arxiv-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> <code>2604.13035</code>
+                </a>
+            </div>
+        </article>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Papers sourced from <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv.org</a></p>
+        <p><a href="https://github.com/adhirajghosh/arxiv-digest" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+
+    <script src="static/app.js?v=c65e0935"></script>
+</body>
+</html>

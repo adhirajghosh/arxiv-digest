@@ -1,0 +1,153 @@
+# arXiv Digest — April 17, 2026
+
+## Top Highlights Today
+- **English is Not All You Need** — 220-run controlled study showing even a single added non-English language during post-training lifts both English and cross-lingual performance.
+- **MERIT / Reasoning Resides in Layers** — Training-free, layer-selective merging restores temporal reasoning in video-LLMs — clean diagnosis that visual alignment damages specific layers.
+- **EXAONE 4.5** — LG's first open-weight VLM for industrial intelligence, a new data point alongside Qwen3-VL / InternVL.
+- **MERRIN** — Multimodal retrieval + multi-hop reasoning over noisy, conflicting web evidence.
+- **Generative Refinement Networks** — Hierarchical Binary Quantization attacks the tokenization bottleneck in visual synthesis.
+
+## Papers
+
+### 1. English is Not All You Need: Systematically Exploring the Role of Multilinguality in LLM Post-Training
+**Authors:** Mehak Dhaliwal, Shashwat Chaurasia, Yao Qin, Dezhi Hong, Thomas Butler
+**Affiliations:** UC Santa Barbara; Amazon
+**Link:** https://arxiv.org/abs/2604.13286
+**Abstract:** A systematic, controlled study of the interplay between training language coverage, model scale, and task domain based on 220 SFT runs on parallel translated multilingual data mixtures spanning math reasoning and API calling, with models up to 8B. Increasing language coverage is largely beneficial across tasks and scales, with low-resource languages benefiting most; incorporating a single non-English language improves both English and cross-lingual generalization.
+**TL;DR:** Rare controlled ablation on multilingual SFT data at 8B with parallel translations isolating the coverage variable. Adding even one non-English language improves English; wider coverage disproportionately helps low-resource tongues.
+**Take:** Parallel-translation design says something cleaner about coverage vs. quantity than most "multilingual matters" papers. Whether it generalizes past 8B and past translated data is the open question.
+
+---
+
+### 2. Bridging Linguistic Gaps: Cross-Lingual Mapping in Pre-Training and Dataset for Enhanced Multilingual LLM Performance
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.10590
+**Abstract:** Multilingual LLMs struggle with cross-lingual tasks due to data imbalances and monolingual bias in pre-training. Introduces a Cross-Lingual Mapping Task during pre-training that enhances cross-lingual alignment without compromising monolingual fluency, plus a supporting dataset.
+**TL;DR:** Auxiliary cross-lingual mapping objective at pre-training time (not post-training), targeting the high/low-resource gap where it is baked in.
+**Take:** Pre-training-stage interventions are under-explored because they are expensive. If ablations are honest about scale, this is more interesting than another SFT paper.
+
+---
+
+### 3. Reasoning Resides in Layers: Restoring Temporal Reasoning in Video-Language Models with Layer-Selective Merging
+**Authors:** Zihang Fu, Haonan Wang, Jian Kang, Kenji Kawaguchi, Jiaying Wu
+**Affiliations:** Affiliations not clearly listed (author list suggests NUS and collaborators)
+**Link:** https://arxiv.org/abs/2604.11399
+**Abstract:** Multimodal adaptation gives LLMs perception but weakens reasoning — especially in video-LLMs where visual alignment impairs temporal reasoning. MERIT is a training-free, task-driven merging framework that searches layer-wise self-attention merging recipes between a video-LLM and its text-only backbone, improving temporal reasoning while preserving perception; generalizes across four benchmarks.
+**TL;DR:** Observes adaptation damages reasoning in specific layers, then recovers them by selectively merging from the text backbone — no training. Beats uniform merging and random layer selection.
+**Take:** Merging as a surgical diagnostic tool is a nice move. Whether "reasoning resides in layers" is durable or setup-specific is what to watch.
+
+---
+
+### 4. EXAONE 4.5 Technical Report: LG's First Open-Weight Vision-Language Model for Industrial Intelligence
+**Authors:** EXAONE / LG AI Research team
+**Affiliations:** LG AI Research
+**Link:** https://arxiv.org/abs/2604.08644
+**Abstract:** Technical report for LG AI Research's first open-weight VLM, focused on industrial-intelligence deployment (documents, schematics, charts).
+**TL;DR:** Another frontier-lab open VLM release, emphasis on industrial-document understanding.
+**Take:** Tech reports are only as good as their evals. Interesting question is whether EXAONE 4.5 clears general VLM bars or hides behind "industrial" framing.
+
+---
+
+### 5. Generative Refinement Networks for Visual Synthesis
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.13030
+**Abstract:** Introduces GRNs, a visual synthesis paradigm addressing diffusion inefficiency via Hierarchical Binary Quantization (HBQ), reframing synthesis as iterative refinement over structured binary codes.
+**TL;DR:** HBQ as a replacement for continuous-latent diffusion and VQ-style tokenizers, with iterative refinement. Targets the many-step diffusion sampling cost.
+**Take:** "Next-generation beats diffusion" claims rarely survive compute-matched scaling. Watch the ablations.
+
+---
+
+### 6. MERRIN: A Benchmark for Multimodal Evidence Retrieval and Reasoning in Noisy Web Environments
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.13418
+**Abstract:** Agents must identify appropriate modality, retrieve relevant evidence, and multi-hop reason over noisy, conflicting, incomplete web sources.
+**TL;DR:** Pushes multimodal evaluation into realistic web-messy regime: incomplete evidence, conflicting sources, modality selection as part of the task.
+**Take:** Benchmarks folding noise and conflict into the spec are badly needed. Risk: rankings dominated by retrieval scaffolding instead of reasoning. Check the baselines.
+
+---
+
+### 7. Reward Design for Physical Reasoning in Vision-Language Models
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.13993
+**Abstract:** SOTA VLMs underperform humans on physics benchmarks; this paper investigates reward design choices for RL-based VLM training on physical reasoning tasks.
+**TL;DR:** Reward-ablation paper for RL post-training on physics, a task type that exposes where VLMs paper over perception with language priors.
+**Take:** Useful only if the reward design generalizes beyond the training distribution. That is the thing to look for.
+
+---
+
+### 8. GeoAlign: Geometric Feature Realignment for MLLM Spatial Reasoning
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12630
+**Abstract:** Dynamically aggregates multi-layer geometric features to realign MLLMs with actual spatial reasoning demands.
+**TL;DR:** Targets the failure mode where MLLMs lose spatial precision during vision-text alignment, via dynamic multi-layer feature aggregation.
+**Take:** Spatial reasoning is a visible VLM weak point. Any training-light, benchmark-general fix matters — wait for third-party reproductions.
+
+---
+
+### 9. Anthropogenic Regional Adaptation in Multimodal Vision-Language Model
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.11490
+**Abstract:** A paradigm to optimize model relevance to specific regional contexts while preserving global generalization, using the GG-EZ adaptation method (regional data filtering + model merging).
+**TL;DR:** Targets systematic VLM failure on culturally/geographically specific content. GG-EZ uses filtered regional data plus merging without sacrificing global performance.
+**Take:** Overdue direction. Stands or falls on whether regional eval is representative or cherry-picked to failure modes of English-centric pretraining.
+
+---
+
+### 10. Small Vision-Language Models are Smart Compressors for Long Video Understanding
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.08120
+**Abstract:** Tempo adapts MLLMs for hour-long videos by using a small VLM as a local temporal compressor before a larger reasoning model.
+**TL;DR:** Cheap small VLM as local compressor feeding a larger model a denser representation. Practical two-stage recipe for hour-long video where token budgets dominate.
+**Take:** The obvious right design; the open question is how the small model's failure modes propagate. Needs adversarial / low-info clip stress tests.
+
+---
+
+### 11. SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.07990
+**Abstract:** 1M in-the-wild videos annotated with text descriptions, camera parameters, dense depth, and consistent 3D point tracks. Supports text-to-video synthesis with and without camera control.
+**TL;DR:** Richly annotated 1M-scale video dataset (text + camera + depth + 3D tracks). Supports camera-controllable T2V out of the box.
+**Take:** If poses and depth are reliable at 1M scale, this is the most valuable artifact in the batch. Check track quality and licensing.
+
+---
+
+### 12. ReasonXL: Shifting LLM Reasoning Language Without Sacrificing Performance
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.12378
+**Abstract:** First large-scale parallel reasoning-trace corpus across five European languages (>2M aligned samples per language), enabling language-transfer of CoT-style reasoning.
+**TL;DR:** Parallel reasoning traces — not just QA pairs — targeting the asymmetry that LLMs reason in English regardless of prompt language.
+**Take:** Right data unit for the problem and hard to construct. "No performance sacrifice" claim needs scrutiny beyond the surveyed domains and languages.
+
+---
+
+### 13. Indexing Multimodal Language Models for Large-Scale Image Retrieval
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.13268
+**Abstract:** Addresses using MLLMs as retrievers at scale, including indexing strategies that make MLLM embeddings practical for large-scale image retrieval.
+**TL;DR:** Systems-side contribution for MLLM-as-retriever: how to index embeddings from decoder-style models. Data-infrastructure work for the LLM-everywhere era.
+**Take:** Throughput/memory have been blockers; any credible progress here flows directly into search, curation, and RAG.
+
+---
+
+### 14. SceneCritic: A Symbolic Evaluator for 3D Indoor Scene Synthesis
+**Authors:** Not clearly listed in search data
+**Affiliations:** Affiliations not clearly listed
+**Link:** https://arxiv.org/abs/2604.13035
+**Abstract:** A symbolic evaluator for LLM/VLM-generated 3D indoor scenes, grading intermediate layouts and scene graphs rather than just rendered output.
+**TL;DR:** Symbolic (not perceptual) scoring of intermediate scene structure — a more honest metric than VLM-as-judge for 3D generation.
+**Take:** 3D scene-gen evaluation has been weak. Usefulness depends on whether the symbolic rules are tight enough to be falsifiable.
+
+---
+
+## Overall Trend Today
+Today leans heavily on correction-after-adaptation: MERIT for video-LLMs, GeoAlign for spatial MLLMs, and regional-adaptation work all argue that multimodal adaptation damages specific capabilities in predictable ways and that targeted recovery (merging, re-aligning, distilling) beats adaptation from scratch. Multilinguality is having a strong day too — three substantial papers (English is Not All You Need, Bridging Linguistic Gaps, ReasonXL) making the same point from different angles: English-centric training is a choice, not a default, and the choice is expensive. On data and benchmarks, MERRIN and SceneScribe-1M stand out, both pushing evaluation and training into messier, more realistic regimes. Generative-image work (GRN) is more speculative — interesting reframing of tokenization, unproven at scale. The long-video thread continues with practical token-budget engineering (Tempo, Mosaic) rather than architectural breakthroughs.
