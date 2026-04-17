@@ -195,6 +195,8 @@ def build():
 
     # Render each digest page
     digest_template = env.get_template("digest.html")
+    SHORT_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     for i, digest in enumerate(digests):
         prev_date = digests[i + 1]["date"] if i + 1 < len(digests) else None
         next_date = digests[i - 1]["date"] if i > 0 else None
@@ -203,8 +205,12 @@ def build():
         highlights = enrich_highlights(digest["highlights"], papers)
         topic_summary = build_topic_summary(papers)
 
+        y, m, d = digest["date"].split("-")
+        date_short = f"{SHORT_MONTHS[int(m) - 1]} {int(d)}"
+
         html = digest_template.render(
             date_display=digest["date_display"],
+            date_short=date_short,
             current_date=digest["date"],
             prev_date=prev_date,
             next_date=next_date,

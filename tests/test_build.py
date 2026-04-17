@@ -26,7 +26,7 @@ def test_full_build():
     with open(os.path.join(OUTPUT_DIR, "2026-04-09.html")) as f:
         html = f.read()
     assert "VLMs Need Words" in html
-    assert "arXiv Digest" in html
+    assert "arXiv Daily" in html
     assert "https://arxiv.org/abs/2604.02486" in html
     assert "topic-pill" in html
     assert "data-topics" in html
